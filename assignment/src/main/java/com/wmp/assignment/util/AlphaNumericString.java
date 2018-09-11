@@ -58,13 +58,13 @@ public class AlphaNumericString {
 	}
 	
 	public static String sort(String str) {
-		HashMap<AlphaNumericString.Type, String> filtered = AlphaNumericString.filter(str);
+		HashMap<Type, String> filtered = filter(str);
 		
-		String alphaStr = filtered.get(AlphaNumericString.Type.ALPHA);
-		String numberStr = filtered.get(AlphaNumericString.Type.NUMBER);
+		String alphaStr = filtered.get(Type.ALPHA);
+		String numberStr = filtered.get(Type.NUMBER);
 		
-		String sortedAlpha = AlphaNumericString.sort(alphaStr, AlphaNumericString.Type.ALPHA);
-		String sortedNumber = AlphaNumericString.sort(numberStr, AlphaNumericString.Type.NUMBER);
+		String sortedAlpha = sort(alphaStr, Type.ALPHA);
+		String sortedNumber = sort(numberStr, Type.NUMBER);
 		
 		StringBuffer sb = new StringBuffer();
 		
