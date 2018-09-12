@@ -28,9 +28,9 @@
 	
 	<aop:config>
 		<aop:aspect ref="alphaNumericStringAspect">
-			<aop:pointcut expression="execution(* com.wmp.assignment.util.AlphaNumericString.sort(..))" id="alphaNumeric"/>
-			<aop:before pointcut-ref="alphaNumeric" method="beforeSorting"/>
-			<aop:after-returning pointcut-ref="alphaNumeric" method="afterSorting" returning="sortedStr" />
+			<aop:pointcut expression="execution(* com.wmp.assignment.util.AlphaNumericString.sort(String))
+			and args(str)"  id="alphaNumeric"/>
+			<aop:around pointcut-ref="alphaNumeric" method="sorting" arg-names="str" />
 		</aop:aspect>
 	</aop:config>
 	
