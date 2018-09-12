@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.Collections;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -13,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 public class AlphaNumericStringAspect {
 	private static final Logger logger = LoggerFactory.getLogger(AlphaNumericStringAspect.class);
-	Map<String, String> resultMap = new HashMap<String, String>();
+	Map<String, String> resultMap = Collections.synchronizedMap(new HashMap<String, String>());
 	
 	public AlphaNumericStringAspect() {}
 	
