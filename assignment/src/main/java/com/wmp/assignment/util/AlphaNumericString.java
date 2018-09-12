@@ -9,7 +9,9 @@ public class AlphaNumericString {
 	public static final String NUMBER_ORDER = "0123456789";
 	public enum Type { ALPHA, NUMBER };
 	
-	private static HashMap<Type, String> filter(String str) {
+	public AlphaNumericString() {}
+	
+	private HashMap<Type, String> filter(String str) {
 		HashMap<Type, String> result = new HashMap<Type, String>();
 		StringBuffer alphaSb = new StringBuffer();
 		StringBuffer numberSb = new StringBuffer();
@@ -31,7 +33,7 @@ public class AlphaNumericString {
 		return result;
 	}
 	
-	private static String sort(String str, Type type) {
+	private String sort(String str, Type type) {
 		Character[] charArr = new Character[str.length()];
 		StringBuffer sb = new StringBuffer();
 		
@@ -57,7 +59,7 @@ public class AlphaNumericString {
 		return sb.toString();
 	}
 	
-	public static String sort(String str) {
+	public String sort(String str) {
 		HashMap<Type, String> filtered = filter(str);
 		
 		String alphaStr = filtered.get(Type.ALPHA);

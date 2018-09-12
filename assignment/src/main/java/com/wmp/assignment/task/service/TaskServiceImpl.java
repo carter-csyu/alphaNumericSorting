@@ -3,6 +3,7 @@ package com.wmp.assignment.task.service;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wmp.assignment.task.model.Result;
@@ -11,6 +12,9 @@ import com.wmp.assignment.util.AlphaNumericString;
 @Service("taskService")
 public class TaskServiceImpl implements TaskService {
 	Logger log = Logger.getLogger(this.getClass());
+	
+	@Autowired
+	AlphaNumericString AlphaNumericString;
 	
 	@Override
 	public Result getAlpahNumericSortedString(Map<String, Object> param) {
