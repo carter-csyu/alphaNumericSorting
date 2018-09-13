@@ -23,16 +23,5 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<beans:bean id="alphaNemericString" class="com.wmp.assignment.util.AlphaNumericString" />
-	<beans:bean id="alphaNumericStringAspect" class="com.wmp.assignment.common.aop.AlphaNumericStringAspect" />
-	
-	<aop:config>
-		<aop:aspect ref="alphaNumericStringAspect">
-			<aop:pointcut expression="execution(* com.wmp.assignment.util.AlphaNumericString.sort(String))
-			and args(str)"  id="alphaNumeric"/>
-			<aop:around pointcut-ref="alphaNumeric" method="sorting" arg-names="str" />
-		</aop:aspect>
-	</aop:config>
-	
 	<mvc:annotation-driven />
 </beans:beans>

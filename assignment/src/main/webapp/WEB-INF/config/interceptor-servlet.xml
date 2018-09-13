@@ -10,6 +10,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/task"/>
 			<beans:bean name="commonInterceptor" class="com.wmp.assignment.common.CommonInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

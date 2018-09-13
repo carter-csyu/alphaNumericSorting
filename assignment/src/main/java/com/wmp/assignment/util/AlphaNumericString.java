@@ -87,10 +87,19 @@ public class AlphaNumericString {
 			if (alphaLen > numberLen) {
 				sb.append(sortedAlpha.substring(min, alphaLen));
 			} else if (alphaLen < numberLen){
-				sb.append(sortedNumber.substring(min, numberLen));
+				sb.append(sortedNumber.substring(min, numberLen)); 
 			}
 		}
 		
 		return sb.toString();
+	}
+	
+	public String getQuotient(String str, int combindedUnit) {
+		return str.substring(0, str.length() - str.length() % combindedUnit);
+	}
+	
+	public String getRemainder(String str, int combindedUnit) {
+		int length = str.length();
+		return str.substring(length - length % combindedUnit, length);
 	}
 }
