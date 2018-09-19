@@ -33,6 +33,15 @@ public class AlphaNumericString {
 		return result;
 	}
 	
+	private HashMap<Type, String> filterByRegex(String str) {
+		HashMap<Type, String> result = new HashMap<Type, String>();
+		
+		result.put(Type.ALPHA, str.replaceAll("[^A-z]", ""));
+		result.put(Type.NUMBER, str.replaceAll("[^0-9]", ""));
+		
+		return result;
+	}
+	
 	private String sort(String str, Type type) {
 		Character[] charArr = new Character[str.length()];
 		StringBuffer sb = new StringBuffer();
@@ -60,7 +69,7 @@ public class AlphaNumericString {
 	}
 	
 	public String sort(String str) {
-		HashMap<Type, String> filtered = filter(str);
+		HashMap<Type, String> filtered = filterByRegex(str);
 		
 		String alphaStr = filtered.get(Type.ALPHA);
 		String numberStr = filtered.get(Type.NUMBER);
